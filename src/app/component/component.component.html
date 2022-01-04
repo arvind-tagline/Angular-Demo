@@ -1,0 +1,14 @@
+<p>Server Name</p>
+<!-- <input type="text" class="form-control" [(ngModel)]="serverName"> -->
+<p>Server Contect</p>
+<input type="text" class="form-control" [(ngModel)]="serverContecnt">
+<input type="text" class="form-control" #serverInput>
+<button class="btn btn-primary m-4" (click)="getServer(serverInput)">Add Server</button>
+<button class="btn btn-primary" (click)="addBluePrint()">Add BluePrint</button>
+<ng-container *ngFor="let server of serverDetail">
+    <p [ngStyle]="{'color': server.type === 'server' ? 'red' : 'blue'}">{{server.serverName}}</p>
+    <p [ngStyle]="{'color': server.type === 'blueServer' ? 'red' : 'blue    '}">{{server.serverContecnt}}</p>
+</ng-container>
+
+<button (click)="getInput()">Get Input</button>
+<button (click)="getOutput()">Get Output</button>

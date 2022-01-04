@@ -1,0 +1,14 @@
+<input type="text" [(ngModel)]="name" (ngModelChange)="getAccessBtn()">
+<button (click)="onCreateServer()" [disabled]="accessBtn">
+    Add Name
+</button>
+<h1 *ngIf="nameCreated; else noName">Name is added {{name}}</h1>
+<ng-template #noName>
+    <br> No Name is added
+</ng-template>
+<ng-container *ngFor="let user of users">
+    <p [ngStyle]="{backgroundColor:getColor()}" [ngClass]="{online:userStatus==='online'}">{{user.userName}} with userId
+        {{user.customerId}}
+        is
+        {{getUserStatus()}}</p>
+</ng-container>
